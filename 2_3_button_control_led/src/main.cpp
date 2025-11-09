@@ -1,8 +1,8 @@
 #include <Arduino.h>
 
-#define LED 25
-#define BUTTON0 7
-#define BUTTON1 6
+const int LED = 25;
+const int BUTTON0 = 7;
+const int BUTTON1 = 6;
 
 void button0Interrupt();
 void button1Interrupt();
@@ -31,24 +31,24 @@ void loop()
 
 void button0Interrupt()
 {
-  if (DELAY_TIME < 10000)
+  if(DELAY_TIME < 5000)
   {
-    DELAY_TIME += 500;
+    DELAY_TIME += 100;
   }
   else
   {
-    DELAY_TIME = 10000;
+    DELAY_TIME = 5000;
   }
 }
 
 void button1Interrupt()
 {
-  if (DELAY_TIME > 500)
+  if(DELAY_TIME > 100)
   {
-    DELAY_TIME -= 500;
+    DELAY_TIME -= 100;
   }
   else
   {
-    DELAY_TIME = 500;
+    DELAY_TIME = 100;
   }
 }

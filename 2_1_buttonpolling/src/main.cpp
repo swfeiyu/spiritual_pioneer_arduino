@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-#define LED 25
-#define BUTTON 7
+const int LED = 25;
+const int BUTTON = 7;
 
 int flag = 0;
 
@@ -13,24 +13,24 @@ void setup()
 
 void loop()
 {
-  if (digitalRead(BUTTON) == LOW)
+  if(digitalRead(BUTTON) == LOW)
   {
     delay(60);
-    if (digitalRead(BUTTON) == LOW && flag == 0)
+    if(digitalRead(BUTTON) == LOW && flag == 0)
     {
-      if (digitalRead(LED) == HIGH)
+      if(digitalRead(LED) == HIGH)
       {
         digitalWrite(LED, LOW);
         flag = 1;
       }
-      else if (digitalRead(LED) == LOW)
+      else if(digitalRead(LED) == LOW)
       {
         digitalWrite(LED, HIGH);
         flag = 1;
       }
     }
   }
-  if (digitalRead(BUTTON) == HIGH)
+  if(digitalRead(BUTTON) == HIGH)
   {
     flag = 0;
   }

@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#define LED 25
+const int LED = 25;
 
 void setup()
 {
